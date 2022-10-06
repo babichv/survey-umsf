@@ -1,1 +1,0 @@
-This is an application for collecting UMSF surveys.
