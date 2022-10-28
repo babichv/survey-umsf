@@ -17,4 +17,6 @@ public interface SubjectRepo extends JpaRepository<Subject, Long> {
 			@Param("educationForm") String educationForm,
 			@Param("speciality") String speciality
 			);
+
+	List<Subject> findAllByTitleAndSpeciality(String title, String speciality);
 }

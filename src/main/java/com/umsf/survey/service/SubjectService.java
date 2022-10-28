@@ -26,4 +26,8 @@ public class SubjectService {
 			String speciality) {
 		return subjectRepo.findAllByCriteria(educationLevel, recruitmentYear, educationForm, speciality);
 	}
+
+	public List<Subject> getSubjectsByTitleAndSpeciality(String title, String speciality){
+		return subjectRepo.findAllByTitleAndSpeciality(title, speciality);
+	}
 }
