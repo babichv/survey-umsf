@@ -24,9 +24,9 @@ public class Answer {
 	Integer count;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "id_lecturer",nullable = false)
+	@JoinColumn(name = "id_subject",nullable = false)
 	@NonNull
-	Lecturer lecturers;
+	Subject subjects;
 	
 	@Column(name = "extra",columnDefinition = "TEXT")
 	String extra;
