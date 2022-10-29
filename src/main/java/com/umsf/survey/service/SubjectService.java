@@ -22,12 +22,19 @@ public class SubjectService {
 		return subjectRepo.findAll();
 	}
 
-	public List<Subject> getSubjectsByCriteria(String educationLevel, Integer recruitmentYear, String educationForm,
+	public List<Subject> getSubjectByCriteria(String educationLevel, Integer year, String educationalForm,
 			String speciality) {
-		return subjectRepo.findAllByCriteria(educationLevel, recruitmentYear, educationForm, speciality);
+		//return new ArrayList<Subject>();
+		return subjectRepo.findAllByEducationLevelAndYearAndEducationalFormAndSpeciality(educationLevel, year, educationalForm, speciality);
 	}
 
-	public List<Subject> getSubjectsByTitleAndSpeciality(String title, String speciality){
-		return subjectRepo.findAllByTitleAndSpeciality(title, speciality);
+	public List<Subject> getLecturerByCriteria(
+			String educationLevel, 
+			Integer year, 
+			String educationalForm,
+			String speciality,
+			String title
+			) {
+		return subjectRepo.findAllByEducationLevelAndYearAndEducationalFormAndSpecialityAndTitle(educationLevel, year, educationalForm, speciality, title);
 	}
 }

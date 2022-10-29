@@ -9,14 +9,30 @@ import org.springframework.data.repository.query.Param;
 import com.umsf.survey.entity.Subject;
 
 public interface SubjectRepo extends JpaRepository<Subject, Long> {
-	@Query(value = "select t from lecturer",
-			nativeQuery = true)
-	List<Subject> findAllByCriteria(
+	List<Subject> findAllByEducationLevelAndYearAndEducationalFormAndSpeciality(
+			String educationLevel,
+			Integer year,
+			String educationalForm,
+			String speciality
+			);
+	
+	@Query(value = "SELECT s.id,s.title FROM `subject` as s "
+			+ "where s.education_level = :educationLevel "
+			+ "and s.year = :year "
+			+ "and s.educational_form = :educationalForm "
+			+ "and s.speciality = :speciality ;",nativeQuery = true)
+	List<Subject> findIdAndTitleByEducationLevelAndYearAndEducationalFormAndSpeciality(
 			@Param("educationLevel") String educationLevel,
-			@Param("recruitmentYear") Integer recruitmentYear,
-			@Param("educationForm") String educationForm,
+			@Param("year") Integer year,
+			@Param("educationalForm") String educationalForm,
 			@Param("speciality") String speciality
 			);
-
-	List<Subject> findAllByTitleAndSpeciality(String title, String speciality);
+	
+	List<Subject> findAllByEducationLevelAndYearAndEducationalFormAndSpecialityAndTitle(
+			String educationLevel,
+			Integer year, 
+			String educationalForm, 
+			String speciality, 
+			String title
+			);
 }
