@@ -107,6 +107,14 @@ public class Subject {
 		this.year = year;
 	}
 
+	public String getLecturer() {
+		return lecturer;
+	}
+
+	public void setLecturer(String lecturer) {
+		this.lecturer = lecturer;
+	}
+	
 	@Override
 	public String toString() {
 		return "Subject [id=" + id + ", title=" + title + ", educationLevel=" + educationLevel + ", educationalForm="
