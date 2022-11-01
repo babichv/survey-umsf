@@ -37,4 +37,20 @@ public class SubjectService {
 			) {
 		return subjectRepo.findAllByEducationLevelAndYearAndEducationalFormAndSpecialityAndTitle(educationLevel, year, educationalForm, speciality, title);
 	}
+
+	public List<Subject> getAllEducationLevel(){
+		return subjectRepo.findAllEducationLevel();
+	}
+
+	public List<Subject> getAllYear(){
+		return subjectRepo.findAllYear();
+	}
+
+	public List<Subject> getAllEducationalForm(){
+		return subjectRepo.findAllEducationalForm();
+	}
+	
+	public List<Subject> getAllSpeciality(){
+		return subjectRepo.findAllSpeciality();
+	}
 }

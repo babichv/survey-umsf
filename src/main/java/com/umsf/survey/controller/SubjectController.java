@@ -12,7 +12,7 @@ import com.umsf.survey.entity.Subject;
 import com.umsf.survey.service.SubjectService;
 
 @RestController
-@RequestMapping("survey/subject")
+@RequestMapping("/survey/subject")
 public class SubjectController {
 	
 	private final SubjectService subjectService;
@@ -48,5 +48,24 @@ public class SubjectController {
 			@RequestParam("title") String title){
 		return subjectService.getLecturerByCriteria(educationLevel,year,educationalForm,speciality,title);
 	}
+
+	@GetMapping("/all/educationLevel")
+	public List<Subject> getAllEducationLevel(){
+		return subjectService.getAllEducationLevel();
+	}
+
+	@GetMapping("/all/educationalForm")
+	public List<Subject> getAllEducationalForm(){
+		return subjectService.getAllEducationalForm();
+	}
 	
-}
+	@GetMapping("/all/year")
+	public List<Subject> getAllYear(){
+		return subjectService.getAllYear();
+	}
+
+	@GetMapping("/all/speciality")
+	public List<Subject> getAllSpeciality(){
+		return subjectService.getAllSpeciality();
+	}
+} 

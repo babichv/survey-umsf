@@ -35,4 +35,16 @@ public interface SubjectRepo extends JpaRepository<Subject, Long> {
 			String speciality, 
 			String title
 			);
+
+	@Query(value = "SELECT * FROM subject GROUP BY education_level", nativeQuery = true)
+	List<Subject> findAllEducationLevel();
+
+	@Query(value = "SELECT * FROM subject GROUP BY year", nativeQuery = true)
+	List<Subject> findAllYear();
+	
+	@Query(value = "SELECT * FROM subject GROUP BY educational_form", nativeQuery = true)
+	List<Subject> findAllEducationalForm();
+	
+	@Query(value = "SELECT * FROM subject GROUP BY speciality", nativeQuery = true)
+	List<Subject> findAllSpeciality();
 }
