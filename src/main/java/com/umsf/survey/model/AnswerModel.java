@@ -26,30 +26,68 @@ public class AnswerModel {
             throw new NullPointerException();
         }
         AnswerModel answerModel = new AnswerModel();
-        answerModel.setAnswer1(answer.getAnswer1());
-        answerModel.setAnswer2(answer.getAnswer2());
-        answerModel.setAnswer3(answer.getAnswer3());
-        answerModel.setAnswer4(answer.getAnswer4());
-        answerModel.setAnswer5(answer.getAnswer5());
-        answerModel.setAnswer6(answer.getAnswer6());
-        answerModel.setAnswer7(answer.getAnswer7());
-        answerModel.setAnswer8(answer.getAnswer8());
-        answerModel.setAnswer9(answer.getAnswer9());
-        answerModel.setAnswer10(answer.getAnswer10());
-        answerModel.setAnswer11(answer.getAnswer11());
+        double avg = 0;
+        int countAnswers = 0;
+
+        if (answer.getAnswer1() != null){
+            answerModel.setAnswer1(answer.getAnswer1());
+            avg =+ answer.getAnswer1();
+            countAnswers++;
+        }
+        if (answer.getAnswer2() != null){
+            answerModel.setAnswer2(answer.getAnswer2());
+            avg =+ answer.getAnswer2();
+            countAnswers++;
+        }
+        if (answer.getAnswer3() != null){
+            answerModel.setAnswer3(answer.getAnswer3());
+            avg =+ answer.getAnswer3();
+            countAnswers++;
+        }
+        if (answer.getAnswer4() != null){
+            answerModel.setAnswer4(answer.getAnswer4());
+            avg =+ answer.getAnswer4();
+            countAnswers++;
+        }
+        if (answer.getAnswer5() != null){
+            answerModel.setAnswer5(answer.getAnswer5());
+            avg =+ answer.getAnswer5();
+            countAnswers++;
+        }
+        if (answer.getAnswer6() != null){
+            answerModel.setAnswer6(answer.getAnswer6());
+            avg =+ answer.getAnswer6();
+            countAnswers++;
+        }
+        if (answer.getAnswer7() != null){
+            answerModel.setAnswer7(answer.getAnswer7());
+            avg =+ answer.getAnswer7();
+            countAnswers++;
+        }
+        if (answer.getAnswer8() != null){
+            answerModel.setAnswer8(answer.getAnswer8());
+            avg =+ answer.getAnswer8();
+            countAnswers++;
+        }
+        if (answer.getAnswer9() != null){
+            answerModel.setAnswer9(answer.getAnswer9());
+            avg =+ answer.getAnswer9();
+            countAnswers++;
+        }
+        if (answer.getAnswer10() != null){
+            answerModel.setAnswer10(answer.getAnswer10());
+            avg =+ answer.getAnswer10();
+            countAnswers++;
+        }
+        if (answer.getAnswer11() != null){
+            answerModel.setAnswer11(answer.getAnswer11());
+            avg =+ answer.getAnswer11();
+            countAnswers++;
+        }
+        answerModel.setAvg(avg/countAnswers);
         answerModel.setExtra(answer.getExtra());
-        answerModel.setAvg((answerModel.getAnswer1()
-                + answerModel.getAnswer2()
-                + answerModel.getAnswer3()
-                + answerModel.getAnswer4()
-                + answerModel.getAnswer5()
-                + answer.getAnswer6()
-                + answer.getAnswer7()
-                + answer.getAnswer8()
-                + answer.getAnswer9()
-                + answerModel.getAnswer10()
-                + answerModel.getAnswer11()) / 11
-        );
+        answerModel.setLecturer(answer.getLecturer());
+
 
         return answerModel;
     }
