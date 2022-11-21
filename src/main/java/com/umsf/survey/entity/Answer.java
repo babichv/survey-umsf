@@ -59,6 +59,9 @@ public class Answer {
 	@Column(name = "answer_11", columnDefinition = "TINYINT")
 	Byte answer11;
 
+	public Answer() {
+	}
+
 	public Answer(Long id,
 				  String lecturer,
 				  String extra,

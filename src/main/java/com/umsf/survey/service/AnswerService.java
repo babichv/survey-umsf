@@ -24,7 +24,8 @@ public class AnswerService {
 	}
 
 	public List<Answer> getAllByLecturer(String lecturer){
-		return answerRepo.getAllByLecturer(lecturer);
+		List<Answer> answers = answerRepo.getAllByLecturer(lecturer);
+		for ()
 	}
 
 	public Answer sendAnswer(Answer answer) {
