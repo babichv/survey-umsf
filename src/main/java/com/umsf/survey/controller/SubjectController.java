@@ -78,22 +78,38 @@ public class SubjectController {
 	}
 
 	@GetMapping("/all/educationLevel")
-	public List<Subject> getAllEducationLevel(){
-		return subjectService.getAllEducationLevel();
+	public ResponseEntity getAllEducationLevel(){
+		try {
+			return ResponseEntity.ok(subjectService.getAllEducationLevel());
+		} catch (Exception e){
+			return ResponseEntity.badRequest().body(e.getMessage());
+		}
 	}
 
 	@GetMapping("/all/educationalForm")
-	public List<Subject> getAllEducationalForm(){
-		return subjectService.getAllEducationalForm();
+	public ResponseEntity getAllEducationalForm(){
+		try {
+			return ResponseEntity.ok(subjectService.getAllEducationalForm());
+		} catch (Exception e){
+			return ResponseEntity.badRequest().body(e.getMessage());
+		}
 	}
 	
 	@GetMapping("/all/year")
-	public List<Subject> getAllYear(){
-		return subjectService.getAllYear();
+	public ResponseEntity getAllYear(){
+		try {
+			return ResponseEntity.ok().body(subjectService.getAllYear());
+		} catch (Exception e){
+			return ResponseEntity.badRequest().body(e.getMessage());
+		}
 	}
 
 	@GetMapping("/all/speciality")
-	public List<Subject> getAllSpeciality(){
-		return subjectService.getAllSpeciality();
+	public ResponseEntity getAllSpeciality(){
+		try {
+			return ResponseEntity.ok(subjectService.getAllSpeciality());
+		} catch (Exception e){
+			return ResponseEntity.badRequest().body(e.getMessage());
+		}
 	}
 }
