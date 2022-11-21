@@ -1,16 +1,11 @@
 package com.umsf.survey.controller;
 
-import java.util.List;
-
-import com.umsf.survey.exception.AnswerNotFoundException;
-import com.umsf.survey.model.AnswerModel;
 import com.umsf.survey.service.AnswerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.umsf.survey.entity.Answer;
-import com.umsf.survey.repo.AnswerRepo;
 
 @RestController
 @RequestMapping("/survey/answer")

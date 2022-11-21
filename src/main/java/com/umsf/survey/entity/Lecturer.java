@@ -20,16 +20,7 @@ public class Lecturer {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	Long id;
-	
-//	@OneToMany(cascade = {CascadeType.MERGE, 
-//			CascadeType.REMOVE},
-//			fetch = FetchType.LAZY,
-//			mappedBy = "lecturers")
-//	List<Answer> answers;
-	
-//	@ManyToMany(mappedBy = "lecturers")
-//	Set<Subject> sebjects;
-	
+
 	@Column(name = "name",nullable = false)
 	String name;
 
