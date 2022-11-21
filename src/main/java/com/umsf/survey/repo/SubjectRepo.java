@@ -32,7 +32,7 @@ public interface SubjectRepo extends JpaRepository<Subject, Long> {
 			@Param("speciality") String speciality
 			);
 	
-	List<Subject> findAllByEducationLevelAndYearAndEducationalFormAndSpecialityAndTitle(
+	List<Subject> getAllByEducationLevelAndYearAndEducationalFormAndSpecialityAndTitle(
 			String educationLevel,
 			Integer year, 
 			String educationalForm, 
@@ -40,20 +40,20 @@ public interface SubjectRepo extends JpaRepository<Subject, Long> {
 			String title
 			);
 	
-	List<Subject> findAllBySpecialityAndTitle(
+	List<Subject> getAllBySpecialityAndTitle(
 			String speciality, 
 			String title
 			);
 
 	@Query(value = "SELECT * FROM subject GROUP BY education_level", nativeQuery = true)
-	List<Subject> findAllEducationLevel();
+	List<Subject> getAllEducationLevel();
 
 	@Query(value = "SELECT * FROM subject GROUP BY year", nativeQuery = true)
-	List<Subject> findAllYear();
+	List<Subject> getAllYear();
 	
 	@Query(value = "SELECT * FROM subject GROUP BY educational_form", nativeQuery = true)
-	List<Subject> findAllEducationalForm();
+	List<Subject> getAllEducationalForm();
 	
 	@Query(value = "SELECT * FROM subject GROUP BY speciality", nativeQuery = true)
-	List<Subject> findAllSpeciality();
+	List<Subject> getAllSpeciality();
 }

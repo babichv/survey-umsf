@@ -38,28 +38,27 @@ public class SubjectService {
 			String speciality,
 			String title
 			) {
-		return subjectRepo.findAllByEducationLevelAndYearAndEducationalFormAndSpecialityAndTitle(educationLevel, year, educationalForm, speciality, title);
+		return subjectRepo.getAllByEducationLevelAndYearAndEducationalFormAndSpecialityAndTitle(educationLevel, year, educationalForm, speciality, title);
 	}
 	
 	public List<Subject> getLecturerByCriteria(String speciality, String title) {
-		// TODO Auto-generated method stub
-		return subjectRepo.findAllBySpecialityAndTitle(speciality, title);
+		return subjectRepo.getAllBySpecialityAndTitle(speciality, title);
 	}
 
 	public List<Subject> getAllEducationLevel(){
-		return subjectRepo.findAllEducationLevel();
+		return subjectRepo.getAllEducationLevel();
 	}
 
 	public List<Subject> getAllYear(){
-		return subjectRepo.findAllYear();
+		return subjectRepo.getAllYear();
 	}
 
 	public List<Subject> getAllEducationalForm(){
-		return subjectRepo.findAllEducationalForm();
+		return subjectRepo.getAllEducationalForm();
 	}
 	
 	public List<Subject> getAllSpeciality(){
-		return subjectRepo.findAllSpeciality();
+		return subjectRepo.getAllSpeciality();
 	}
 
 	
