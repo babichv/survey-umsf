@@ -31,8 +31,8 @@ public class AnswerController {
 		return answerService.getAll();
 	}
 
-	@GetMapping("/{lecturer}")
-	public List<Answer> getAnswerByLecturer(@PathVariable String lecturer){
+	@GetMapping("/getByLecturer")
+	public List<Answer> getAnswerByLecturer(@RequestParam String lecturer){
 		return answerService.getAllByLecturer(lecturer);
 	}
 
