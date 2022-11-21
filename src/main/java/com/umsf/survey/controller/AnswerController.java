@@ -2,6 +2,8 @@ package com.umsf.survey.controller;
 
 import java.util.List;
 
+import com.umsf.survey.exception.AnswerNotFoundException;
+import com.umsf.survey.model.AnswerModel;
 import com.umsf.survey.service.AnswerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -20,20 +22,25 @@ public class AnswerController {
 	public AnswerController(AnswerService answerService) {
 		this.answerService = answerService;
 	}
-	
-	@GetMapping
-	public String hello() {
-		return "answer";
-	}
-	
+
 	@GetMapping("/all")
-	public List<Answer> getAll() {
-		return answerService.getAll();
+	public ResponseEntity getAll() {
+		try {
+			return ResponseEntity.ok(answerService.getAll());
+		}
+		catch (Exception e){
+			return ResponseEntity.badRequest().body(e.getMessage());
+		}
 	}
 
 	@GetMapping("/getByLecturer")
-	public List<Answer> getAnswerByLecturer(@RequestParam String lecturer){
-		return answerService.getAllByLecturer(lecturer);
+	public ResponseEntity getAnswerByLecturer(@RequestParam String lecturer){
+		try {
+			return ResponseEntity.ok(answerService.getAllModelByLecturer(lecturer));
+		}
+		catch (Exception e){
+			return ResponseEntity.badRequest().body(e.getMessage());
+		}
 	}
 
 	@PostMapping("/send")
@@ -45,5 +52,4 @@ public class AnswerController {
 			return ResponseEntity.badRequest().body("Error!");
 		}
 	}
-	
 }

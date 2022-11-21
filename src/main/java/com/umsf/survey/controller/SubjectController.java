@@ -3,6 +3,7 @@ package com.umsf.survey.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -21,42 +22,59 @@ public class SubjectController {
 	public SubjectController(SubjectService subjectService) {
 		this.subjectService = subjectService;
 	}
-	
-	@GetMapping
-	public String subject() {
-		return "subject";
-	}
-	
+
 	@GetMapping("/all")
-	public List<Subject> all() {
-		return subjectService.getAllSubject();
+	public ResponseEntity all() {
+		try{
+			return ResponseEntity.ok(subjectService.getAllSubject());
+		}
+		catch (Exception e){
+			return ResponseEntity.badRequest().body(e.getMessage());
+		}
 	}
 	
 	@GetMapping("/getSubjectByParams")
-	public List<Subject> getSubjectByCriteria(@RequestParam("educationLevel") String educationLevel,
+	public ResponseEntity getSubjectByCriteria(@RequestParam("educationLevel") String educationLevel,
 			@RequestParam("year") Integer year,
 			@RequestParam("educationalForm") String educationalForm,
 			@RequestParam("speciality") String speciality){
-		return subjectService.getSubjectByCriteria(educationLevel,year,educationalForm,speciality);
+		try{
+			return ResponseEntity.ok(subjectService.getSubjectByCriteria(educationLevel,year,educationalForm,speciality));
+		}catch (Exception e){
+			return ResponseEntity.badRequest().body(e.getMessage());
+		}
 	}
 	
 	@GetMapping("/getSubjectStatsByParams")
-	public List<Subject> getSubjectByCriteria(@RequestParam("speciality") String speciality){
-		return subjectService.getSubjectByCriteria(speciality);
+	public ResponseEntity getSubjectByCriteria(@RequestParam("speciality") String speciality){
+		try{
+			return ResponseEntity.ok(subjectService.getSubjectByCriteria(speciality));
+		}catch (Exception e){
+			return ResponseEntity.badRequest().body(e.getMessage());
+		}
 	}
 	
 	@GetMapping("/getLecturerByParams")
-	public List<Subject> getLecturerByCriteria(@RequestParam("educationLevel") String educationLevel,
-			@RequestParam("year") Integer year,
-			@RequestParam("educationalForm") String educationalForm,
-			@RequestParam("speciality") String speciality,
-			@RequestParam("title") String title){
-		return subjectService.getLecturerByCriteria(educationLevel,year,educationalForm,speciality,title);
+	public ResponseEntity getLecturerByCriteria(@RequestParam("educationLevel") String educationLevel,
+															   @RequestParam("year") Integer year,
+															   @RequestParam("educationalForm") String educationalForm,
+															   @RequestParam("speciality") String speciality,
+															   @RequestParam("title") String title){
+		try{
+			return ResponseEntity.ok(subjectService.getLecturerByCriteria(educationLevel,year,educationalForm,speciality,title));
+		}catch (Exception e){
+			return ResponseEntity.badRequest().body(e.getMessage());
+		}
 	}
 	
 	@GetMapping("/getLecturerStatsByParams")
-	public List<Subject> getLecturerByCriteria(@RequestParam("speciality") String speciality, @RequestParam("title") String title){
-		return subjectService.getLecturerByCriteria(speciality, title);
+	public ResponseEntity getLecturerByCriteria(@RequestParam("speciality") String speciality,
+												@RequestParam("title") String title){
+		try {
+			return ResponseEntity.ok(subjectService.getLecturerByCriteria(speciality, title));
+		}catch (Exception e){
+			return ResponseEntity.badRequest().body(e.getMessage());
+		}
 	}
 
 	@GetMapping("/all/educationLevel")
@@ -78,4 +96,4 @@ public class SubjectController {
 	public List<Subject> getAllSpeciality(){
 		return subjectService.getAllSpeciality();
 	}
-} 
+}
