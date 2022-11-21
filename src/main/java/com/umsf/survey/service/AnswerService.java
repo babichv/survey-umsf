@@ -18,9 +18,20 @@ public class AnswerService {
 		this.answerRepo = answerRepo;
 	}
 
-	public void addNewAnswer(Answer answer) {
-		System.out.println(answer.toString());
-		//genreRepository.save(genre);
+
+	public List<Answer> getAll(){
+		return answerRepo.getAll();
+	}
+
+	public List<Answer> getAllByLecturer(String lecturer){
+		return answerRepo.getAllByLecturer(lecturer);
+	}
+
+	public Answer sendAnswer(Answer answer) {
+		if (answer == null){
+			throw new NullPointerException();
+		}
+		return answerRepo.save(answer);
 	}
 
 	public List<Answer> getAllSubject() {

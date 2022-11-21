@@ -35,12 +35,7 @@ public class Subject {
 //	@ManyToMany(mappedBy = "subjects")
 //	Set<Speciality> specialities;
 	
-	@OneToMany(cascade = {CascadeType.MERGE, 
-			CascadeType.REMOVE},
-			fetch = FetchType.LAZY,
-			mappedBy = "subjects")
-	List<Answer> answers;
-	
+
 	@Column(name = "title",nullable = false)
 	String title;
 	
@@ -119,8 +114,5 @@ public class Subject {
 	public String toString() {
 		return "Subject [id=" + id + ", title=" + title + ", educationLevel=" + educationLevel + ", educationalForm="
 				+ educationalForm + ", speciality=" + speciality + ", year=" + year + "]";
-	}
-
-
-	
+	}	
 }

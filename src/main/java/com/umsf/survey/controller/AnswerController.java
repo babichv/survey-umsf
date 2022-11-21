@@ -2,23 +2,23 @@ package com.umsf.survey.controller;
 
 import java.util.List;
 
+import com.umsf.survey.service.AnswerService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import com.umsf.survey.entity.Answer;
 import com.umsf.survey.repo.AnswerRepo;
 
 @RestController
-@RequestMapping("survey/answer")
+@RequestMapping("/survey/answer")
 public class AnswerController {
 	
-	private final AnswerRepo answerRepo;
+	private final AnswerService answerService;
 	
 	@Autowired
-	public AnswerController(AnswerRepo answerRepo) {
-		this.answerRepo = answerRepo;
+	public AnswerController(AnswerService answerService) {
+		this.answerService = answerService;
 	}
 	
 	@GetMapping
@@ -27,8 +27,23 @@ public class AnswerController {
 	}
 	
 	@GetMapping("/all")
-	public List<Answer> all() {
-		return answerRepo.findAll();
+	public List<Answer> getAll() {
+		return answerService.getAll();
+	}
+
+	@GetMapping("/{lecturer}")
+	public List<Answer> getAnswerByLecturer(@PathVariable String lecturer){
+		return answerService.getAllByLecturer(lecturer);
+	}
+
+	@PostMapping("/send")
+	public ResponseEntity sendAnswer(@RequestBody Answer answer){
+		try {
+			answerService.sendAnswer(answer);
+			return ResponseEntity.ok().body("Answer send success!");
+		}catch (Exception e){
+			return ResponseEntity.badRequest().body("Error!");
+		}
 	}
 	
 }
