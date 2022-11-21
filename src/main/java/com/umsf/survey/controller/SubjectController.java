@@ -40,6 +40,11 @@ public class SubjectController {
 		return subjectService.getSubjectByCriteria(educationLevel,year,educationalForm,speciality);
 	}
 	
+	@GetMapping("/getSubjectStatsByParams")
+	public List<Subject> getSubjectByCriteria(@RequestParam("speciality") String speciality){
+		return subjectService.getSubjectByCriteria(speciality);
+	}
+	
 	@GetMapping("/getLecturerByParams")
 	public List<Subject> getLecturerByCriteria(@RequestParam("educationLevel") String educationLevel,
 			@RequestParam("year") Integer year,
@@ -47,6 +52,11 @@ public class SubjectController {
 			@RequestParam("speciality") String speciality,
 			@RequestParam("title") String title){
 		return subjectService.getLecturerByCriteria(educationLevel,year,educationalForm,speciality,title);
+	}
+	
+	@GetMapping("/getLecturerStatsByParams")
+	public List<Subject> getLecturerByCriteria(@RequestParam("speciality") String speciality, @RequestParam("title") String title){
+		return subjectService.getLecturerByCriteria(speciality, title);
 	}
 
 	@GetMapping("/all/educationLevel")

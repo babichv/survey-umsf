@@ -16,6 +16,10 @@ public interface SubjectRepo extends JpaRepository<Subject, Long> {
 			String speciality
 			);
 	
+	List<Subject> findAllBySpeciality(
+			String speciality
+			);
+	
 	@Query(value = "SELECT s.id,s.title FROM `subject` as s "
 			+ "where s.education_level = :educationLevel "
 			+ "and s.year = :year "
@@ -32,6 +36,11 @@ public interface SubjectRepo extends JpaRepository<Subject, Long> {
 			String educationLevel,
 			Integer year, 
 			String educationalForm, 
+			String speciality, 
+			String title
+			);
+	
+	List<Subject> findAllBySpecialityAndTitle(
 			String speciality, 
 			String title
 			);

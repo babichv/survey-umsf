@@ -24,8 +24,11 @@ public class SubjectService {
 
 	public List<Subject> getSubjectByCriteria(String educationLevel, Integer year, String educationalForm,
 			String speciality) {
-		//return new ArrayList<Subject>();
 		return subjectRepo.findAllByEducationLevelAndYearAndEducationalFormAndSpeciality(educationLevel, year, educationalForm, speciality);
+	}
+	
+	public List<Subject> getSubjectByCriteria(String speciality) {
+		return subjectRepo.findAllBySpeciality(speciality);
 	}
 
 	public List<Subject> getLecturerByCriteria(
@@ -36,6 +39,11 @@ public class SubjectService {
 			String title
 			) {
 		return subjectRepo.findAllByEducationLevelAndYearAndEducationalFormAndSpecialityAndTitle(educationLevel, year, educationalForm, speciality, title);
+	}
+	
+	public List<Subject> getLecturerByCriteria(String speciality, String title) {
+		// TODO Auto-generated method stub
+		return subjectRepo.findAllBySpecialityAndTitle(speciality, title);
 	}
 
 	public List<Subject> getAllEducationLevel(){
@@ -53,4 +61,8 @@ public class SubjectService {
 	public List<Subject> getAllSpeciality(){
 		return subjectRepo.findAllSpeciality();
 	}
+
+	
+
+	
 }
