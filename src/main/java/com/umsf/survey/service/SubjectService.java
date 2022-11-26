@@ -41,8 +41,8 @@ public class SubjectService {
 		return subjectRepo.getAllByEducationLevelAndYearAndEducationalFormAndSpecialityAndTitle(educationLevel, year, educationalForm, speciality, title);
 	}
 	
-	public List<Subject> getLecturerByCriteria(String speciality, String title) {
-		return subjectRepo.getAllBySpecialityAndTitle(speciality, title);
+	public List<Subject> getLecturerByCriteria(String speciality) {
+		return subjectRepo.getAllBySpeciality(speciality);
 	}
 
 	public List<Subject> getAllEducationLevel(){
@@ -60,6 +60,8 @@ public class SubjectService {
 	public List<Subject> getAllSpeciality(){
 		return subjectRepo.getAllSpeciality();
 	}
+
+
 
 	
 

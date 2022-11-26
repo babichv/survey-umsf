@@ -40,9 +40,9 @@ public interface SubjectRepo extends JpaRepository<Subject, Long> {
 			String title
 			);
 	
-	List<Subject> getAllBySpecialityAndTitle(
-			String speciality, 
-			String title
+	@Query(value = "SELECT * FROM subject WHERE speciality = :speciality GROUP BY lecturer ", nativeQuery = true)
+	List<Subject> getAllBySpeciality(
+			String speciality
 			);
 
 	@Query(value = "SELECT * FROM subject GROUP BY education_level", nativeQuery = true)
