@@ -32,7 +32,20 @@ public class Subject {
 	
 	@Column(name = "lecturer",nullable = false,length = 50)
 	String lecturer;
-	
+
+	public Subject() {
+	}
+
+	public Subject(Long id, String title, String educationLevel, String educationalForm, String speciality, Integer year, String lecturer) {
+		this.id = id;
+		this.title = title;
+		this.educationLevel = educationLevel;
+		this.educationalForm = educationalForm;
+		this.speciality = speciality;
+		this.year = year;
+		this.lecturer = lecturer;
+	}
+
 	public Long getId() {
 		return id;
 	}
@@ -88,10 +101,17 @@ public class Subject {
 	public void setLecturer(String lecturer) {
 		this.lecturer = lecturer;
 	}
-	
+
 	@Override
 	public String toString() {
-		return "Subject [id=" + id + ", title=" + title + ", educationLevel=" + educationLevel + ", educationalForm="
-				+ educationalForm + ", speciality=" + speciality + ", year=" + year + "]";
-	}	
+		return "Subject{" +
+				"id=" + id +
+				", title='" + title + '\'' +
+				", educationLevel='" + educationLevel + '\'' +
+				", educationalForm='" + educationalForm + '\'' +
+				", speciality='" + speciality + '\'' +
+				", year=" + year +
+				", lecturer='" + lecturer + '\'' +
+				'}';
+	}
 }

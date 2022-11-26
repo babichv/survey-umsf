@@ -3,6 +3,7 @@ package com.umsf.survey.model;
 import com.umsf.survey.entity.Answer;
 
 public class AnswerModel {
+    private String subject;
     private String lecturer;
     private String extra;
     private Byte answer1;
@@ -17,10 +18,11 @@ public class AnswerModel {
     private Byte answer10;
     private Byte answer11;
     private double avg;
+    private int countAnswers;
+
 
     public AnswerModel() {
     }
-
     public static AnswerModel entityToModel(Answer answer){
         if (answer == null){
             throw new NullPointerException();
@@ -84,6 +86,7 @@ public class AnswerModel {
             avg = avg + answer.getAnswer11();
             countAnswers++;
         }
+        
         answerModel.setAvg(avg/countAnswers);
         answerModel.setExtra(answer.getExtra());
         answerModel.setLecturer(answer.getLecturer());
@@ -91,7 +94,9 @@ public class AnswerModel {
 
         return answerModel;
     }
-    public AnswerModel(String lecturer,
+
+    public AnswerModel(String subject,
+                       String lecturer,
                        String extra,
                        Byte answer1,
                        Byte answer2,
@@ -104,7 +109,9 @@ public class AnswerModel {
                        Byte answer9,
                        Byte answer10,
                        Byte answer11,
-                       double avg) {
+                       double avg,
+                       int countAnswers) {
+        this.subject = subject;
         this.lecturer = lecturer;
         this.extra = extra;
         this.answer1 = answer1;
@@ -119,6 +126,15 @@ public class AnswerModel {
         this.answer10 = answer10;
         this.answer11 = answer11;
         this.avg = avg;
+        this.countAnswers = countAnswers;
+    }
+
+    public String getSubject() {
+        return subject;
+    }
+
+    public void setSubject(String subject) {
+        this.subject = subject;
     }
 
     public String getLecturer() {
@@ -231,5 +247,13 @@ public class AnswerModel {
 
     public void setAvg(double avg) {
         this.avg = avg;
+    }
+
+    public int getCountAnswers() {
+        return countAnswers;
+    }
+
+    public void setCountAnswers(int countAnswers) {
+        this.countAnswers = countAnswers;
     }
 }

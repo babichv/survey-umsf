@@ -9,9 +9,11 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface AnswerRepo extends JpaRepository<Answer, Long>{
+
     @Query(value = "SELECT * FROM answer", nativeQuery = true)
     List<Answer> getAll();
     
     List<Answer> getAllByLecturer(String lecturer);
-
+    
+    List<Answer> getAllBySubjectAndLecturer(String subject, String lecturer);
 }

@@ -13,51 +13,54 @@ import javax.persistence.Table;
 public class Answer {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	Long id;
+	private Long id;
 
+	@Column(name = "subject", columnDefinition = "TEXT")
+	private String subject;
 	@Column(name = "lecturer", columnDefinition = "TEXT")
-	String lecturer;
+	private String lecturer;
 	
 	@Column(name = "extra", columnDefinition = "TEXT")
-	String extra;
+	private String extra;
 
 	@Column(name = "answer_1", columnDefinition = "TINYINT")
-	Byte answer1;
+	private Byte answer1;
 	
 	@Column(name = "answer_2", columnDefinition = "TINYINT")
-	Byte answer2;
+	private Byte answer2;
 
 	@Column(name = "answer_3", columnDefinition = "TINYINT")
-	Byte answer3;
+	private Byte answer3;
 
 	@Column(name = "answer_4", columnDefinition = "TINYINT")
-	Byte answer4;
+	private Byte answer4;
 
 	@Column(name = "answer_5", columnDefinition = "TINYINT")
-	Byte answer5;
+	private Byte answer5;
 
 	@Column(name = "answer_6", columnDefinition = "TINYINT")
-	Byte answer6;
+	private Byte answer6;
 
 	@Column(name = "answer_7", columnDefinition = "TINYINT")
-	Byte answer7;
+	private Byte answer7;
 
 	@Column(name = "answer_8", columnDefinition = "TINYINT")
-	Byte answer8;
+	private Byte answer8;
 
 	@Column(name = "answer_9", columnDefinition = "TINYINT")
-	Byte answer9;
+	private Byte answer9;
 
 	@Column(name = "answer_10", columnDefinition = "TINYINT")
-	Byte answer10;
+	private Byte answer10;
 
 	@Column(name = "answer_11", columnDefinition = "TINYINT")
-	Byte answer11;
+	private Byte answer11;
 
 	public Answer() {
 	}
 
 	public Answer(Long id,
+				  String subject,
 				  String lecturer,
 				  String extra,
 				  Byte answer1,
@@ -70,8 +73,10 @@ public class Answer {
 				  Byte answer8,
 				  Byte answer9,
 				  Byte answer10,
-				  Byte answer11) {
+				  Byte answer11)
+	{
 		this.id = id;
+		this.subject = subject;
 		this.lecturer = lecturer;
 		this.extra = extra;
 		this.answer1 = answer1;
@@ -93,6 +98,14 @@ public class Answer {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public String getSubject() {
+		return subject;
+	}
+
+	public void setSubject(String subject) {
+		this.subject = subject;
 	}
 
 	public String getLecturer() {
@@ -203,6 +216,7 @@ public class Answer {
 	public String toString() {
 		return "Answer{" +
 				"id=" + id +
+				", subject='" + subject + '\'' +
 				", lecturer='" + lecturer + '\'' +
 				", extra='" + extra + '\'' +
 				", answer1=" + answer1 +

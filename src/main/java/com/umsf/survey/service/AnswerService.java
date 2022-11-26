@@ -33,9 +33,19 @@ public class AnswerService {
 		}
 		return answerModels;
 	}
+
+	public List<AnswerModel> getAllModelBySubjectAndLecturer(String subject, String lecturer){
+		List<Answer> answers = answerRepo.getAllBySubjectAndLecturer(subject, lecturer);
+		AnswerModel answerModel = new AnswerModel();
+		for (Answer answer : answers){
+
+		}
+	}
+
 	public List<Answer> getAllByLecturer(String lecturer){
 		return answerRepo.getAllByLecturer(lecturer);
 	}
+
 
 	public Answer sendAnswer(Answer answer) {
 		if (answer == null){
