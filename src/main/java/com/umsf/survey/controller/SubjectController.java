@@ -65,10 +65,9 @@ public class SubjectController {
 	}
 	
 	@GetMapping("/getLecturerStatsByParams")
-	public ResponseEntity getLecturerByCriteria(@RequestParam("speciality") String speciality,
-												@RequestParam("title") String title){
+	public ResponseEntity getLecturerByCriteria(@RequestParam("speciality") String speciality){
 		try {
-			return ResponseEntity.ok(subjectService.getLecturerByCriteria(speciality, title));
+			return ResponseEntity.ok(subjectService.getLecturerByCriteria(speciality));
 		}catch (Exception e){
 			return ResponseEntity.badRequest().body(e.getMessage());
 		}
