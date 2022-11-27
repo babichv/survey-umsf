@@ -31,7 +31,7 @@ public class AnswerController {
 	@GetMapping("/getByLecturer")
 	public ResponseEntity getAnswerByLecturer(@RequestParam String lecturer){
 		try {
-			return ResponseEntity.ok(answerService.getAllModelByLecturer(lecturer));
+			return ResponseEntity.ok(answerService.getAllByLecturer(lecturer));
 		}
 		catch (Exception e){
 			return ResponseEntity.badRequest().body(e.getMessage());

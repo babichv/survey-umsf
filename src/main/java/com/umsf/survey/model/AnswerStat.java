@@ -1,65 +1,28 @@
-package com.umsf.survey.entity;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+package com.umsf.survey.model;
 
 
-@Entity
-@Table
-public class Answer {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+public class AnswerStat {
+
 	private Long id;
-
-	@Column(name = "subject", columnDefinition = "TEXT")
 	private String subject;
-	@Column(name = "lecturer", columnDefinition = "TEXT")
 	private String lecturer;
-	
-	@Column(name = "extra", columnDefinition = "TEXT")
 	private String extra;
-
-	@Column(name = "answer_1", columnDefinition = "TINYINT")
 	private Byte answer1;
-	
-	@Column(name = "answer_2", columnDefinition = "TINYINT")
 	private Byte answer2;
-
-	@Column(name = "answer_3", columnDefinition = "TINYINT")
 	private Byte answer3;
-
-	@Column(name = "answer_4", columnDefinition = "TINYINT")
 	private Byte answer4;
-
-	@Column(name = "answer_5", columnDefinition = "TINYINT")
 	private Byte answer5;
-
-	@Column(name = "answer_6", columnDefinition = "TINYINT")
 	private Byte answer6;
-
-	@Column(name = "answer_7", columnDefinition = "TINYINT")
 	private Byte answer7;
-
-	@Column(name = "answer_8", columnDefinition = "TINYINT")
 	private Byte answer8;
-
-	@Column(name = "answer_9", columnDefinition = "TINYINT")
 	private Byte answer9;
-
-	@Column(name = "answer_10", columnDefinition = "TINYINT")
 	private Byte answer10;
-
-	@Column(name = "answer_11", columnDefinition = "TINYINT")
 	private Byte answer11;
-
-	public Answer() {
+	
+	public AnswerStat() {
 	}
 
-	public Answer(String subject,
+	public AnswerStat(String subject,
 			  String lecturer,
 			  String extra,
 			  Byte answer1,
@@ -91,7 +54,7 @@ public class Answer {
 }
 
 	
-	public Answer(Long id,
+	public AnswerStat(Long id,
 				  String subject,
 				  String lecturer,
 				  String extra,
