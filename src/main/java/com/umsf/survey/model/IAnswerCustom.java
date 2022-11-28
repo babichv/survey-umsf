@@ -1,18 +1,18 @@
 package com.umsf.survey.model;
 
 public interface IAnswerCustom {
-    long getId();
-    double getAnswer1();
-    double getAnswer2();
-    double getAnswer3();
-    double getAnswer4();
-    double getAnswer5();
-    double getAnswer6();
-    double getAnswer7();
-    double getAnswer8();
-    double getAnswer9();
-    double getAnswer10();
-    double getAnswer11();
+    Long getId();
+    Double getAnswer1();
+    Double getAnswer2();
+    Double getAnswer3();
+    Double getAnswer4();
+    Double getAnswer5();
+    Double getAnswer6();
+    Double getAnswer7();
+    Double getAnswer8();
+    Double getAnswer9();
+    Double getAnswer10();
+    Double getAnswer11();
     String getLecturer();
     String getSubject();
     int getCount();

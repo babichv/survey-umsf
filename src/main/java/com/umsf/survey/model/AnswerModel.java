@@ -8,19 +8,19 @@ public class AnswerModel {
     private String subject;
     private String lecturer;
 
-    private double answer1;
-    private double answer2;
-    private double answer3;
-    private double answer4;
-    private double answer5;
-    private double answer6;
-    private double answer7;
-    private double answer8;
-    private double answer9;
-    private double answer10;
-    private double answer11;
-    private double avg;
-    private int countAnswers;
+    private Double answer1;
+    private Double answer2;
+    private Double answer3;
+    private Double answer4;
+    private Double answer5;
+    private Double answer6;
+    private Double answer7;
+    private Double answer8;
+    private Double answer9;
+    private Double answer10;
+    private Double answer11;
+    private Double avg;
+    private Integer countAnswers;
 
 
     public AnswerModel() {
