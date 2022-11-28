@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.umsf.survey.entity.Answer;
-import com.umsf.survey.model.AnswerI;
 import com.umsf.survey.repo.AnswerRepo;
 
 @Service
