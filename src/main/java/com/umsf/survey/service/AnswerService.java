@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.umsf.survey.entity.Answer;
+import com.umsf.survey.model.CommentModel;
 import com.umsf.survey.repo.AnswerRepo;
 
 @Service
@@ -43,13 +44,26 @@ public class AnswerService {
 //		}
 //	}
 
-	public List<AnswerModel> getAllByLecturer(String lecturer){
-		List<IAnswerCustom> answers = answerRepo.getAllByLecturer(lecturer);
+	public List<AnswerModel> getAllByLecturerGroupSubject(String lecturer){
+		List<IAnswerCustom> answers = answerRepo.getAllByLecturerGroupSubject(lecturer);
 		List<AnswerModel> answerModels = new ArrayList<>();
 		for (IAnswerCustom answer : answers){
 			answerModels.add(AnswerModel.entityToModel(answer));
 		}
 		return answerModels;
+	}
+	
+	public List<Answer> findAllByLecturer(String lecturer){
+		return  answerRepo.findAllByLecturer(lecturer);
+	}
+	
+	public List<CommentModel> findCommentByLecturer(String lecturer){
+		List<CommentModel> commentModels = new ArrayList<CommentModel>();
+		List<Answer> answers = answerRepo.findAllByLecturer(lecturer);
+		for (Answer answer : answers) {
+			commentModels.add(CommentModel.entityToModel(answer));
+		}
+		return commentModels;
 	}
 
 	public Answer sendAnswer(Answer answer) {

@@ -31,7 +31,17 @@ public class AnswerController {
 	@GetMapping("/getByLecturer")
 	public ResponseEntity getAnswerByLecturer(@RequestParam String lecturer){
 		try {
-			return ResponseEntity.ok(answerService.getAllByLecturer(lecturer));
+			return ResponseEntity.ok(answerService.getAllByLecturerGroupSubject(lecturer));
+		}
+		catch (Exception e){
+			return ResponseEntity.badRequest().body(e.getMessage());
+		}
+	}
+	
+	@GetMapping("/getCommentByLecturer")
+	public ResponseEntity getCommentByLecturer(@RequestParam String lecturer){
+		try {
+			return ResponseEntity.ok(answerService.findCommentByLecturer(lecturer));
 		}
 		catch (Exception e){
 			return ResponseEntity.badRequest().body(e.getMessage());
