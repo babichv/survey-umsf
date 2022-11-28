@@ -91,6 +91,7 @@ public class AnswerModel {
         answerModel.setAvg(avg/count);
         answerModel.setLecturer(answer.getLecturer());
         answerModel.setSubject(answer.getSubject());
+        answerModel.setCountAnswers(answer.getCount());
         return answerModel;
     }
 

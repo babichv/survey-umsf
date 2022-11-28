@@ -49,6 +49,6 @@ value = "SELECT \n"
 		+ "AVG(answer_11) AS answer11\n"
 		+ "FROM answer a WHERE lecturer= :lecturer GROUP BY `subject`")
     List<IAnswerCustom> getAllByLecturer(String lecturer);
-    
+
     List<Answer> getAllBySubjectAndLecturer(String subject, String lecturer);
 }
