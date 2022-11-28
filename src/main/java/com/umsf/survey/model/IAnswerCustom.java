@@ -15,5 +15,5 @@ public interface IAnswerCustom {
     Double getAnswer11();
     String getLecturer();
     String getSubject();
-    int getCount();
+    Integer getCount();
 }
