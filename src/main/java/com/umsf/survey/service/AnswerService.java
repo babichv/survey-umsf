@@ -1,7 +1,10 @@
 package com.umsf.survey.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import com.umsf.survey.model.AnswerModel;
+import com.umsf.survey.model.IAnswerCustom;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -41,8 +44,13 @@ public class AnswerService {
 //		}
 //	}
 
-	public List<AnswerI> getAllByLecturer(String lecturer){
-		return answerRepo.getAllByLecturer(lecturer);
+	public List<AnswerModel> getAllByLecturer(String lecturer){
+		List<IAnswerCustom> answers = answerRepo.getAllByLecturer(lecturer);
+		List<AnswerModel> answerModels = new ArrayList<>();
+		for (IAnswerCustom answer : answers){
+			answerModels.add(AnswerModel.entityToModel(answer));
+		}
+		return answerModels;
 	}
 
 	public Answer sendAnswer(Answer answer) {

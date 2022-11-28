@@ -2,6 +2,7 @@ package com.umsf.survey.repo;
 
 import java.util.List;
 
+import com.umsf.survey.model.IAnswerCustom;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
@@ -47,7 +48,7 @@ value = "SELECT \n"
 		+ "AVG(answer_10) AS answer10,\n"
 		+ "AVG(answer_11) AS answer11\n"
 		+ "FROM answer a WHERE lecturer= :lecturer GROUP BY `subject`")
-    List<AnswerI> getAllByLecturer(String lecturer);
+    List<IAnswerCustom> getAllByLecturer(String lecturer);
     
     List<Answer> getAllBySubjectAndLecturer(String subject, String lecturer);
 }
