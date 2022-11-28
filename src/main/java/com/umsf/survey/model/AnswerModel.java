@@ -8,19 +8,19 @@ public class AnswerModel {
     private String subject;
     private String lecturer;
 
-    private double answer1;
-    private double answer2;
-    private double answer3;
-    private double answer4;
-    private double answer5;
-    private double answer6;
-    private double answer7;
-    private double answer8;
-    private double answer9;
-    private double answer10;
-    private double answer11;
-    private double avg;
-    private int countAnswers;
+    private Double answer1;
+    private Double answer2;
+    private Double answer3;
+    private Double answer4;
+    private Double answer5;
+    private Double answer6;
+    private Double answer7;
+    private Double answer8;
+    private Double answer9;
+    private Double answer10;
+    private Double answer11;
+    private Double avg;
+    private Integer countAnswers;
 
 
     public AnswerModel() {
@@ -31,8 +31,8 @@ public class AnswerModel {
         if (answer == null){
             throw new NullPointerException();
         }
-        double avg = 0;
-        int count = 0;
+        Double avg = 0.0;
+        Integer count = 0;
         if (!Objects.isNull(answer.getAnswer1())){
             answerModel.setAnswer1(answer.getAnswer1());
             avg = avg + answer.getAnswer1();
@@ -96,19 +96,19 @@ public class AnswerModel {
     }
 
     public AnswerModel(String subject, String lecturer,
-                       double answer1,
-                       double answer2,
-                       double answer3,
-                       double answer4,
-                       double answer5,
-                       double answer6,
-                       double answer7,
-                       double answer8,
-                       double answer9,
-                       double answer10,
-                       double answer11,
-                       double avg,
-                       int countAnswers) {
+                       Double answer1,
+                       Double answer2,
+                       Double answer3,
+                       Double answer4,
+                       Double answer5,
+                       Double answer6,
+                       Double answer7,
+                       Double answer8,
+                       Double answer9,
+                       Double answer10,
+                       Double answer11,
+                       Double avg,
+                       Integer countAnswers) {
 
         this.subject = subject;
         this.lecturer = lecturer;
@@ -143,107 +143,107 @@ public class AnswerModel {
         this.lecturer = lecturer;
     }
 
-    public double getAnswer1() {
+    public Double getAnswer1() {
         return answer1;
     }
 
-    public void setAnswer1(double answer1) {
+    public void setAnswer1(Double answer1) {
         this.answer1 = answer1;
     }
 
-    public double getAnswer2() {
+    public Double getAnswer2() {
         return answer2;
     }
 
-    public void setAnswer2(double answer2) {
+    public void setAnswer2(Double answer2) {
         this.answer2 = answer2;
     }
 
-    public double getAnswer3() {
+    public Double getAnswer3() {
         return answer3;
     }
 
-    public void setAnswer3(double answer3) {
+    public void setAnswer3(Double answer3) {
         this.answer3 = answer3;
     }
 
-    public double getAnswer4() {
+    public Double getAnswer4() {
         return answer4;
     }
 
-    public void setAnswer4(double answer4) {
+    public void setAnswer4(Double answer4) {
         this.answer4 = answer4;
     }
 
-    public double getAnswer5() {
+    public Double getAnswer5() {
         return answer5;
     }
 
-    public void setAnswer5(double answer5) {
+    public void setAnswer5(Double answer5) {
         this.answer5 = answer5;
     }
 
-    public double getAnswer6() {
+    public Double getAnswer6() {
         return answer6;
     }
 
-    public void setAnswer6(double answer6) {
+    public void setAnswer6(Double answer6) {
         this.answer6 = answer6;
     }
 
-    public double getAnswer7() {
+    public Double getAnswer7() {
         return answer7;
     }
 
-    public void setAnswer7(double answer7) {
+    public void setAnswer7(Double answer7) {
         this.answer7 = answer7;
     }
 
-    public double getAnswer8() {
+    public Double getAnswer8() {
         return answer8;
     }
 
-    public void setAnswer8(double answer8) {
+    public void setAnswer8(Double answer8) {
         this.answer8 = answer8;
     }
 
-    public double getAnswer9() {
+    public Double getAnswer9() {
         return answer9;
     }
 
-    public void setAnswer9(double answer9) {
+    public void setAnswer9(Double answer9) {
         this.answer9 = answer9;
     }
 
-    public double getAnswer10() {
+    public Double getAnswer10() {
         return answer10;
     }
 
-    public void setAnswer10(double answer10) {
+    public void setAnswer10(Double answer10) {
         this.answer10 = answer10;
     }
 
-    public double getAnswer11() {
+    public Double getAnswer11() {
         return answer11;
     }
 
-    public void setAnswer11(double answer11) {
+    public void setAnswer11(Double answer11) {
         this.answer11 = answer11;
     }
 
-    public double getAvg() {
+    public Double getAvg() {
         return avg;
     }
 
-    public void setAvg(double avg) {
+    public void setAvg(Double avg) {
         this.avg = avg;
     }
 
-    public int getCountAnswers() {
+    public Integer getCountAnswers() {
         return countAnswers;
     }
 
-    public void setCountAnswers(int countAnswers) {
+    public void setCountAnswers(Integer countAnswers) {
         this.countAnswers = countAnswers;
     }
 }
