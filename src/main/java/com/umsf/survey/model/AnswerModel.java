@@ -95,10 +95,7 @@ public class AnswerModel {
         return answerModel;
     }
 
-<<<<<<< HEAD
-    public AnswerModel(String subject, String lecturer, Double answer1, Double answer2, Double answer3, Double answer4, Double answer5, Double answer6, Double answer7, Double answer8, Double answer9, Double answer10, Double answer11, Double avg, Integer countAnswers) {
-=======
-    public AnswerModel(String subject, String lecturer,
+       public AnswerModel(String subject, String lecturer,
                        Double answer1,
                        Double answer2,
                        Double answer3,
@@ -112,8 +109,6 @@ public class AnswerModel {
                        Double answer11,
                        Double avg,
                        Integer countAnswers) {
-
->>>>>>> 7d8b43ad74de7d1de802586ea265da748f33467a
         this.subject = subject;
         this.lecturer = lecturer;
         this.answer1 = answer1;
