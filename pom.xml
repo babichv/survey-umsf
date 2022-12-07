@@ -13,8 +13,8 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>survey</name>
 	<properties>
-		<java.version>${java.runtime.version}</java.version>
-		<maven.version>${maven.version}</maven.version>
+		<java.version>17.0.5</java.version>
+		<maven.version>3.5.4</maven.version>
 	</properties>
 	<dependencies>
 		
