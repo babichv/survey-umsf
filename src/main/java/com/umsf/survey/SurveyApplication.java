@@ -20,7 +20,6 @@ public class SurveyApplication {
     @Bean
     ApplicationRunner applicationRunner(Environment environment) {
         return args -> {
-        	System.out.println("from application.properties " + environment.getProperty("spring.datasource.username"));
         	System.out.println("from system.properties " + environment.getProperty("maven.version"));
         	System.out.println("from system.properties " + environment.getProperty("java.runtime.version"));
         };
