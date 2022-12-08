@@ -6,6 +6,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 
 @SpringBootApplication
@@ -22,6 +23,7 @@ public class SurveyApplication {
         return args -> {
         	System.out.println("from system.properties " + environment.getProperty("maven.version"));
         	System.out.println("from system.properties " + environment.getProperty("java.runtime.version"));
+        	System.out.println("from application.properties " + environment.getProperty("server.client_url"));
         };
     }
 

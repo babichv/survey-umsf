@@ -1,5 +1,6 @@
 package com.umsf.survey.config;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
@@ -11,10 +12,13 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @PropertySource("classpath:system.properties")
 public class WebConfig implements WebMvcConfigurer {
 
+	@Value( "${server.client_url}")
+	private String CLIENT_URL;
+	
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-//        .allowedOrigins("http://127.0.0.1:5500/").allowedHeaders("*")
+        .allowedOrigins(CLIENT_URL).allowedHeaders("*")
         ;
     }
 }
